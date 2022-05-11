@@ -1,0 +1,149 @@
+@keyframes rotating {
+    from {transform: rotateZ(0deg);}
+    to {transform: rotateZ(360deg);}
+}
+
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+.clock__back {
+    height: 100px;
+    width: 100px;
+    border: 1px solid black;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    /* align-items: top; */
+    /* display: absolute; */
+}
+
+.clock__arrow-seconds {
+    position: absolute;
+    margin-top: 10px;
+    width: 4px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: black;
+    transform-origin: center 40px;
+    animation: rotating 5s infinite cubic-bezier(0, 0, 1, 1);
+}
+
+.clock__arrow-minutes {
+    position: absolute;
+    margin-top: 25px;
+    height: 35px;
+    width: 6px;
+    border-radius: 50%;
+    background-color: black;
+    transform-origin: center 25px;
+    animation: rotating 60s infinite steps(12, start);
+}
+
+.number {
+    font-size: 10px;
+}
+
+.number span {
+    position: absolute;
+}
+
+.clock__container {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(7, 1fr);
+    grid-template-areas: 
+    ". . . twelve . . ."
+    ". eleven . . . one ."
+    "ten . . . . . two"
+    "nine . . . . . three"
+    "eight . . . . . four"
+    ". seven . . . five ."
+    ". . . six . . .";
+}
+
+.one {
+    grid-area: one;
+}
+
+.two {
+    grid-area: two;
+}
+
+.three {
+    grid-area: three;
+}
+
+.four {
+    grid-area: four;
+}
+
+.five {
+    align-self: end;
+    grid-area: five;
+}
+
+.five span {
+    margin-top: -10px;
+}
+
+.six {
+    grid-area: six;
+}
+
+.seven {
+    grid-area: seven;
+}
+
+.seven span {
+    margin-top: 2px;
+    margin-left: 2px;
+}
+
+.eight {
+    grid-area: eight;
+}
+
+.eight span {
+    margin-left: 2px;
+}
+
+.nine {
+    grid-area: nine;
+}
+
+.nine span {
+    margin-left: 2px;
+}
+
+.ten {
+    grid-area: ten;
+}
+
+.ten span {
+    margin-left: 4px;
+}
+
+.eleven {
+    grid-area: eleven;
+}
+
+.eleven span {
+    margin-left: 2px;
+}
+
+.twelve {
+    align-self: center;
+    grid-area: twelve;
+}
+
+.twelve span {
+    margin-top: -4px;
+}
+
+
